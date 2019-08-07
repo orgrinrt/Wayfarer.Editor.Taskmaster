@@ -1,6 +1,23 @@
-﻿namespace Wayfarer.Editor.Taskmaster
+﻿using Godot;
+using Wayfarer.ModuleSystem;
+
+#if TOOLS
+
+namespace Wayfarer.Editor.Taskmaster
 {
-    public class TaskmasterPlugin
+    [Tool]
+    public class TaskmasterPlugin : WayfarerModule
     {
+        public override void _EnterTreeSafe()
+        {
+            // here comes the stuffs
+        }
+
+        public override void _ExitTreeSafe()
+        {
+            // here comes the stuffs
+        }
     }
 }
+
+#endif
