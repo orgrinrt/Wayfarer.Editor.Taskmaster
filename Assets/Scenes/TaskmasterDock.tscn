@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Addons/Wayfarer.UI/Controls/OrganizableContainer/OrganizableContainer.cs" type="Script" id=1]
-[ext_resource path="res://Addons/Wayfarer.UI/Controls/OrganizableItem/OrganizableItem.cs" type="Script" id=2]
-[ext_resource path="res://Addons/Wayfarer.Core/Assets/Icons/manager.png" type="Texture" id=3]
+[ext_resource path="res://Addons/Wayfarer.Editor.Taskmaster/TaskmasterDock.cs" type="Script" id=1]
+[ext_resource path="res://Addons/Wayfarer.UI/Controls/OrganizableContainer/OrganizableContainer.cs" type="Script" id=2]
+[ext_resource path="res://Addons/Wayfarer.UI/Controls/OrganizableItem/OrganizableItem.cs" type="Script" id=3]
+[ext_resource path="res://Addons/Wayfarer.Core/Assets/Icons/manager.png" type="Texture" id=4]
 
 [node name="TaskmasterDock" type="Control"]
 anchor_right = 1.0
@@ -11,129 +12,190 @@ rect_min_size = Vector2( 0, 350 )
 mouse_filter = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+script = ExtResource( 1 )
 
-[node name="OrganizableContainer" type="Control" parent="."]
+[node name="VBox" type="VBoxContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-script = ExtResource( 1 )
-_prevHoveredIndex = 1
-_currHoveredIndex = 2
 
-[node name="OrganizableItem" type="Control" parent="OrganizableContainer"]
+[node name="Top" type="HBoxContainer" parent="VBox"]
+margin_right = 1024.0
+margin_bottom = 30.0
+rect_min_size = Vector2( 0, 30 )
+
+[node name="IsSortedLabel" type="Label" parent="VBox/Top"]
+margin_top = 8.0
+margin_right = 69.0
+margin_bottom = 22.0
+text = "Is Sorted ="
+
+[node name="IsSortedValue" type="Label" parent="VBox/Top"]
+margin_left = 73.0
+margin_top = 8.0
+margin_right = 101.0
+margin_bottom = 22.0
+text = "True"
+
+[node name="HoverIdxLabel" type="Label" parent="VBox/Top"]
+margin_left = 105.0
+margin_top = 8.0
+margin_right = 179.0
+margin_bottom = 22.0
+text = "Hover Idx ="
+
+[node name="HoverIdxValue" type="Label" parent="VBox/Top"]
+margin_left = 183.0
+margin_top = 8.0
+margin_right = 196.0
+margin_bottom = 22.0
+text = "-1"
+
+[node name="Filler" type="Control" parent="VBox/Top"]
+margin_left = 200.0
+margin_right = 981.0
+margin_bottom = 30.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Button" type="Button" parent="VBox/Top"]
+margin_left = 985.0
+margin_right = 1024.0
+margin_bottom = 30.0
+text = "Test"
+
+[node name="OrganizableContainer" type="Control" parent="VBox"]
+editor/display_folded = true
+margin_top = 34.0
+margin_right = 1024.0
+margin_bottom = 600.0
+mouse_filter = 1
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource( 2 )
+_nameOfRoot = "EditorNode"
+
+[node name="OrganizableItem" type="Control" parent="VBox/OrganizableContainer"]
 margin_right = 39.9996
 margin_bottom = 40.0
 mouse_default_cursor_shape = 6
-script = ExtResource( 2 )
+script = ExtResource( 3 )
 __meta__ = {
-"_editor_icon": ExtResource( 3 )
+"_editor_icon": ExtResource( 4 )
 }
+_nameOfRoot = "EditorNode"
 
-[node name="Panel" type="Panel" parent="OrganizableContainer/OrganizableItem"]
+[node name="Panel" type="Panel" parent="VBox/OrganizableContainer/OrganizableItem"]
 margin_right = 40.0
 margin_bottom = 40.0
 mouse_filter = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="OrganizableItem5" type="Control" parent="OrganizableContainer"]
+[node name="OrganizableItem5" type="Control" parent="VBox/OrganizableContainer"]
 margin_left = 44.9996
 margin_right = 84.9996
 margin_bottom = 40.0
 mouse_default_cursor_shape = 6
-script = ExtResource( 2 )
+script = ExtResource( 3 )
 __meta__ = {
-"_editor_icon": ExtResource( 3 )
+"_editor_icon": ExtResource( 4 )
 }
+_nameOfRoot = "EditorNode"
 
-[node name="Panel" type="Panel" parent="OrganizableContainer/OrganizableItem5"]
+[node name="Panel" type="Panel" parent="VBox/OrganizableContainer/OrganizableItem5"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="OrganizableItem4" type="Control" parent="OrganizableContainer"]
+[node name="OrganizableItem4" type="Control" parent="VBox/OrganizableContainer"]
 margin_left = 89.9996
 margin_right = 129.999
 margin_bottom = 40.0
 mouse_default_cursor_shape = 6
-script = ExtResource( 2 )
+script = ExtResource( 3 )
 __meta__ = {
-"_editor_icon": ExtResource( 3 )
+"_editor_icon": ExtResource( 4 )
 }
+_nameOfRoot = "EditorNode"
 
-[node name="Panel2" type="Panel" parent="OrganizableContainer/OrganizableItem4"]
+[node name="Panel2" type="Panel" parent="VBox/OrganizableContainer/OrganizableItem4"]
 margin_right = 40.0
 margin_bottom = 40.0
 mouse_filter = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="OrganizableItem7" type="Control" parent="OrganizableContainer"]
+[node name="OrganizableItem7" type="Control" parent="VBox/OrganizableContainer"]
 margin_left = 134.999
 margin_right = 174.999
 margin_bottom = 40.0
 mouse_default_cursor_shape = 6
-script = ExtResource( 2 )
+script = ExtResource( 3 )
 __meta__ = {
-"_editor_icon": ExtResource( 3 )
+"_editor_icon": ExtResource( 4 )
 }
+_nameOfRoot = "EditorNode"
 
-[node name="Panel2" type="Panel" parent="OrganizableContainer/OrganizableItem7"]
+[node name="Panel2" type="Panel" parent="VBox/OrganizableContainer/OrganizableItem7"]
 margin_right = 40.0
 margin_bottom = 40.0
 mouse_filter = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="OrganizableItem2" type="Control" parent="OrganizableContainer"]
+[node name="OrganizableItem2" type="Control" parent="VBox/OrganizableContainer"]
 margin_left = 179.999
 margin_right = 219.999
 margin_bottom = 40.0
 mouse_default_cursor_shape = 6
-script = ExtResource( 2 )
+script = ExtResource( 3 )
 __meta__ = {
-"_editor_icon": ExtResource( 3 )
+"_editor_icon": ExtResource( 4 )
 }
+_nameOfRoot = "EditorNode"
 
-[node name="Panel2" type="Panel" parent="OrganizableContainer/OrganizableItem2"]
+[node name="Panel2" type="Panel" parent="VBox/OrganizableContainer/OrganizableItem2"]
 margin_right = 40.0
 margin_bottom = 40.0
 mouse_filter = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="OrganizableItem3" type="Control" parent="OrganizableContainer"]
+[node name="OrganizableItem3" type="Control" parent="VBox/OrganizableContainer"]
 margin_left = 224.999
 margin_right = 264.999
 margin_bottom = 40.0
 mouse_default_cursor_shape = 6
-script = ExtResource( 2 )
+script = ExtResource( 3 )
 __meta__ = {
-"_editor_icon": ExtResource( 3 )
+"_editor_icon": ExtResource( 4 )
 }
+_nameOfRoot = "EditorNode"
 
-[node name="Panel" type="Panel" parent="OrganizableContainer/OrganizableItem3"]
+[node name="Panel" type="Panel" parent="VBox/OrganizableContainer/OrganizableItem3"]
 margin_right = 40.0
 margin_bottom = 40.0
 mouse_filter = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="OrganizableItem6" type="Control" parent="OrganizableContainer"]
+[node name="OrganizableItem6" type="Control" parent="VBox/OrganizableContainer"]
 margin_left = 269.999
 margin_right = 310.0
 margin_bottom = 40.0
 mouse_default_cursor_shape = 6
-script = ExtResource( 2 )
+script = ExtResource( 3 )
 __meta__ = {
-"_editor_icon": ExtResource( 3 )
+"_editor_icon": ExtResource( 4 )
 }
+_nameOfRoot = "EditorNode"
 
-[node name="Panel2" type="Panel" parent="OrganizableContainer/OrganizableItem6"]
+[node name="Panel2" type="Panel" parent="VBox/OrganizableContainer/OrganizableItem6"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
