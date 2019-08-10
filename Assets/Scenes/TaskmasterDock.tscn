@@ -80,8 +80,14 @@ margin_bottom = 600.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource( 2 )
-_regularSizeChildren = true
-_nameOfRoot = "EditorNode"
+layout/organizing_mode = 0
+behaviour/sort_direction = 0
+behaviour/switch_threshold = 1
+layout/separation = 5.0
+behaviour/sort_precision = 0.5
+behaviour/sort_animation_duration = 0.15
+optimizations/regular_sized_children = false
+optimizations/low_performance_mode = false
 
 [node name="OrganizableItem" type="Control" parent="VBox/OrganizableContainer"]
 margin_right = 39.9996
@@ -91,7 +97,6 @@ script = ExtResource( 3 )
 __meta__ = {
 "_editor_icon": ExtResource( 4 )
 }
-_nameOfRoot = "EditorNode"
 
 [node name="Panel" type="Panel" parent="VBox/OrganizableContainer/OrganizableItem"]
 margin_right = 40.0
@@ -109,7 +114,6 @@ script = ExtResource( 3 )
 __meta__ = {
 "_editor_icon": ExtResource( 4 )
 }
-_nameOfRoot = "EditorNode"
 
 [node name="Panel" type="Panel" parent="VBox/OrganizableContainer/OrganizableItem5"]
 anchor_right = 1.0
@@ -127,7 +131,6 @@ script = ExtResource( 3 )
 __meta__ = {
 "_editor_icon": ExtResource( 4 )
 }
-_nameOfRoot = "EditorNode"
 
 [node name="Panel2" type="Panel" parent="VBox/OrganizableContainer/OrganizableItem4"]
 margin_right = 40.0
@@ -145,7 +148,6 @@ script = ExtResource( 3 )
 __meta__ = {
 "_editor_icon": ExtResource( 4 )
 }
-_nameOfRoot = "EditorNode"
 
 [node name="Panel2" type="Panel" parent="VBox/OrganizableContainer/OrganizableItem7"]
 margin_right = 40.0
@@ -163,7 +165,6 @@ script = ExtResource( 3 )
 __meta__ = {
 "_editor_icon": ExtResource( 4 )
 }
-_nameOfRoot = "EditorNode"
 
 [node name="Panel2" type="Panel" parent="VBox/OrganizableContainer/OrganizableItem2"]
 margin_right = 40.0
@@ -181,7 +182,6 @@ script = ExtResource( 3 )
 __meta__ = {
 "_editor_icon": ExtResource( 4 )
 }
-_nameOfRoot = "EditorNode"
 
 [node name="Panel" type="Panel" parent="VBox/OrganizableContainer/OrganizableItem3"]
 margin_right = 40.0
@@ -199,7 +199,6 @@ script = ExtResource( 3 )
 __meta__ = {
 "_editor_icon": ExtResource( 4 )
 }
-_nameOfRoot = "EditorNode"
 
 [node name="Panel2" type="Panel" parent="VBox/OrganizableContainer/OrganizableItem6"]
 anchor_right = 1.0
