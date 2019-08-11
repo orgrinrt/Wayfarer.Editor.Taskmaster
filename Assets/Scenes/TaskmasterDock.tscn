@@ -35,26 +35,26 @@ text = "Is Sorted ="
 [node name="IsSortedValue" type="Label" parent="VBox/Top"]
 margin_left = 73.0
 margin_top = 8.0
-margin_right = 106.0
+margin_right = 101.0
 margin_bottom = 22.0
-text = "False"
+text = "True"
 
 [node name="HoverIdxLabel" type="Label" parent="VBox/Top"]
-margin_left = 110.0
+margin_left = 105.0
 margin_top = 8.0
-margin_right = 184.0
+margin_right = 179.0
 margin_bottom = 22.0
 text = "Hover Idx ="
 
 [node name="HoverIdxValue" type="Label" parent="VBox/Top"]
-margin_left = 188.0
+margin_left = 183.0
 margin_top = 8.0
-margin_right = 201.0
+margin_right = 196.0
 margin_bottom = 22.0
 text = "-1"
 
 [node name="Filler" type="Control" parent="VBox/Top"]
-margin_left = 205.0
+margin_left = 200.0
 margin_right = 845.0
 margin_bottom = 30.0
 size_flags_horizontal = 3
@@ -73,14 +73,13 @@ margin_bottom = 30.0
 text = "Dir: Right"
 
 [node name="OrganizableContainer" type="Control" parent="VBox"]
-editor/display_folded = true
 margin_top = 34.0
 margin_right = 1024.0
 margin_bottom = 600.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource( 2 )
-dropping/allow_dropping = null
+dropping/allow_dropping = false
 dropping/accepted_groups = null
 layout/organizing_mode = 0
 layout/horizontal_alignment = 0
@@ -91,11 +90,12 @@ layout/separation = 5.0
 behaviour/sort_precision = 0.5
 behaviour/sort_animation_duration = 0.3
 optimizations/regular_sized_children = false
-optimizations/low_performance_mode = true
-optimizations/disable_shifting = true
+optimizations/low_performance_mode = false
+optimizations/disable_shifting = false
 
 [node name="OrganizableItem" type="Control" parent="VBox/OrganizableContainer"]
-margin_right = 39.9996
+editor/display_folded = true
+margin_right = 40.0
 margin_bottom = 40.0
 mouse_default_cursor_shape = 6
 script = ExtResource( 3 )
@@ -111,8 +111,9 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="OrganizableItem5" type="Control" parent="VBox/OrganizableContainer"]
-margin_left = 44.9996
-margin_right = 84.9996
+editor/display_folded = true
+margin_left = 45.0
+margin_right = 85.0
 margin_bottom = 40.0
 mouse_default_cursor_shape = 6
 script = ExtResource( 3 )
@@ -128,8 +129,9 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="OrganizableItem4" type="Control" parent="VBox/OrganizableContainer"]
-margin_left = 89.9996
-margin_right = 129.999
+editor/display_folded = true
+margin_left = 90.0
+margin_right = 130.0
 margin_bottom = 40.0
 mouse_default_cursor_shape = 6
 script = ExtResource( 3 )
@@ -145,8 +147,9 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="OrganizableItem7" type="Control" parent="VBox/OrganizableContainer"]
-margin_left = 134.999
-margin_right = 174.999
+editor/display_folded = true
+margin_left = 135.0
+margin_right = 175.0
 margin_bottom = 40.0
 mouse_default_cursor_shape = 6
 script = ExtResource( 3 )
@@ -162,8 +165,9 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="OrganizableItem2" type="Control" parent="VBox/OrganizableContainer"]
-margin_left = 179.999
-margin_right = 219.999
+editor/display_folded = true
+margin_left = 180.0
+margin_right = 220.0
 margin_bottom = 40.0
 mouse_default_cursor_shape = 6
 script = ExtResource( 3 )
@@ -179,8 +183,9 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="OrganizableItem3" type="Control" parent="VBox/OrganizableContainer"]
-margin_left = 224.999
-margin_right = 264.999
+editor/display_folded = true
+margin_left = 225.0
+margin_right = 265.0
 margin_bottom = 40.0
 mouse_default_cursor_shape = 6
 script = ExtResource( 3 )
@@ -196,7 +201,8 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="OrganizableItem6" type="Control" parent="VBox/OrganizableContainer"]
-margin_left = 269.999
+editor/display_folded = true
+margin_left = 270.0
 margin_right = 310.0
 margin_bottom = 40.0
 mouse_default_cursor_shape = 6
