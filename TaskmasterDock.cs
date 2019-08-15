@@ -2,6 +2,7 @@
 
 using Godot;
 using System;
+using Wayfarer.Editor;
 using Wayfarer.UI.Controls;
 using Wayfarer.Utils.Attributes;
 using Wayfarer.Utils.Debug;
@@ -10,11 +11,14 @@ using Wayfarer.Utils.Helpers;
 [Tool]
 public class TaskmasterDock : Control
 {
-    [Get("VBox/OrganizableContainer")] private OrganizableContainer _container;
+    [Get("Panel/OrganizableContainer")] private OrganizableContainer _container;
     [Get("VBox/Top/IsSortedValue")] private Label _isSortedValue;
     [Get("VBox/Top/HoverIdxValue")] private Label _hoverIdxValue;
+    [Get("VBox/Top/RowIdxValue")] private Label _rowIdxValue;
+    [Get("VBox/Top/RowCountValue")] private Label _rowCount;
     [Get("VBox/Top/Regular")] private Button _regularButton;
     [Get("VBox/Top/Dir")] private Button _dirButton;
+    [Get("VBox/Top/Inspect")] private Button _inspectButton;
     
     public override void _Ready()
     {
@@ -38,6 +42,14 @@ public class TaskmasterDock : Control
         {
             
         }
+        try
+        {
+            _inspectButton.Connect("button_up", this, nameof(OnInspectPressed));
+        }
+        catch (Exception e)
+        {
+            
+        }
     }
 
     public override void _Process(float delta)
@@ -45,7 +57,10 @@ public class TaskmasterDock : Control
         try
         {
             _isSortedValue.Text = _container.IsSortDone().ToString();
-            _hoverIdxValue.Text = _container.GetCurrHoveredIndex().ToString();
+            int hoverIdx = _container.GetCurrHoveredIndex();
+            _hoverIdxValue.Text = hoverIdx.ToString();
+            _rowIdxValue.Text = _container.GetRowIdxByItemIdx(hoverIdx).ToString();
+            _rowCount.Text = _container.GetRowCount().ToString();
         }
         catch (Exception e)
         {
@@ -63,9 +78,14 @@ public class TaskmasterDock : Control
 
     private void OnDirButtonPressed()
     {
-        _container.SetSortDirection(_container.SortDirection == SortDirection.Right ? SortDirection.Left : SortDirection.Right);
+        _container.SetSortDirection(_container.SortDirection == SortDirection.Forward ? SortDirection.Backward : SortDirection.Forward);
 
         _dirButton.Text = "Dir: " + _container.SortDirection;
+    }
+
+    private void OnInspectPressed()
+    {
+        WayfarerEditorPlugin.Instance.EditorInterface.InspectObject(_container);
     }
 }
 

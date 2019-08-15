@@ -66,6 +66,10 @@
     <Content Include="README.md" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Wayfarer.Editor\Wayfarer.Editor.csproj">
+      <Project>{8FCE37C7-B9E2-4463-AA29-E8491169B66E}</Project>
+      <Name>Wayfarer.Editor</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Wayfarer.UI\Wayfarer.UI.csproj">
       <Project>{8efe123b-47e5-4144-9ed9-367a44e7b511}</Project>
       <Name>Wayfarer.UI</Name>
