@@ -63,26 +63,26 @@ text = "Row ="
 [node name="RowIdxValue" type="Label" parent="VBox/Top"]
 margin_left = 247.0
 margin_top = 8.0
-margin_right = 255.0
+margin_right = 260.0
 margin_bottom = 22.0
-text = "0"
+text = "-1"
 
 [node name="Slash" type="Label" parent="VBox/Top"]
-margin_left = 259.0
+margin_left = 264.0
 margin_top = 8.0
-margin_right = 264.0
+margin_right = 269.0
 margin_bottom = 22.0
 text = "/"
 
 [node name="RowCountValue" type="Label" parent="VBox/Top"]
-margin_left = 268.0
+margin_left = 273.0
 margin_top = 8.0
-margin_right = 276.0
+margin_right = 286.0
 margin_bottom = 22.0
-text = "4"
+text = "-1"
 
 [node name="Filler" type="Control" parent="VBox/Top"]
-margin_left = 280.0
+margin_left = 290.0
 margin_right = 768.0
 margin_bottom = 30.0
 size_flags_horizontal = 3
